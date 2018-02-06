@@ -1,14 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
+	<!--TODO change the maven id and infos -->
 	<groupId>org.gebjp.study</groupId>
 	<artifactId>geb-study</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ZacGebStudy</name>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!--TODO: change jdk version -->
+		<jdk.version>1.8</jdk.version>
+
+		<slf4j.version>1.5.11</slf4j.version>
+
+		<maven.failsafe.version>2.4.3-alpha-1</maven.failsafe.version>
+		<maven.compiler.version>2.5.1</maven.compiler.version>
 	</properties>
+
 	<repositories>
 		<repository>
 			<id>jcenter</id>
@@ -16,6 +27,7 @@
 			<url>http://jcenter.bintray.com</url>
 		</repository>
 	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
@@ -36,6 +48,18 @@
 			<groupId>com.athaydes</groupId>
 			<artifactId>spock-reports</artifactId>
 			<version>RELEASE</version>
+		</dependency>
+
+		<!--logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>${slf4j.version}</version>
 		</dependency>
 
 		<!-- apache -->
@@ -65,13 +89,14 @@
 			<version>2.53.1</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- <dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-firefox-driver</artifactId> 
-			<version>RELEASE</version> </dependency> <dependency> <groupId>org.seleniumhq.selenium</groupId> 
-			<artifactId>selenium-support</artifactId> <version>RELEASE</version> </dependency> 
-			<dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-chrome-driver</artifactId> 
-			<version>RELEASE</version> </dependency> <dependency> <groupId>org.seleniumhq.selenium</groupId> 
+		<!-- <dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-firefox-driver</artifactId>
+			<version>RELEASE</version> </dependency> <dependency> <groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId> <version>RELEASE</version> </dependency>
+			<dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-chrome-driver</artifactId>
+			<version>RELEASE</version> </dependency> <dependency> <groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-ie-driver</artifactId> <version>RELEASE</version> </dependency> -->
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -85,14 +110,18 @@
 					</includes>
 				</configuration>
 			</plugin>
+
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.codehaus.gmaven</groupId>
 				<artifactId>gmaven-plugin</artifactId>
@@ -122,7 +151,7 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
+				<!--This plugin's configuration is used to store Eclipse m2e settings
 					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
