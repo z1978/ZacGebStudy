@@ -1,0 +1,8 @@
+1# Delete
+.classpath
+	<classpathentry exported="true" kind="con" path="GROOVY_SUPPORT"/>
+	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
+
+2# configure groovy
+Porperties for ZacGebStudy
+Groovy complier level for this project:[2.3]
