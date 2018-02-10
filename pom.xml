@@ -18,6 +18,8 @@
 
 		<maven.failsafe.version>2.4.3-alpha-1</maven.failsafe.version>
 		<maven.compiler.version>2.5.1</maven.compiler.version>
+		
+		<groovy.version>2.3.7</groovy.version>
 	</properties>
 
 	<repositories>
@@ -32,7 +34,7 @@
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
-			<version>2.3.7</version>
+			<version>${groovy.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.spockframework</groupId>
@@ -179,7 +181,7 @@
 					<dependency>
 						<groupId>org.codehaus.groovy</groupId>
 						<artifactId>groovy-all</artifactId>
-						<version>2.3.4</version>
+						<version>${groovy.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
