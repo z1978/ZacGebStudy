@@ -21,6 +21,62 @@ class SpockSample extends Specification {
 		setup:
 		println ("何かの初期化")
 
+		def a = new String[4]
+		def objs = new Object[3]
+
+		a[0] = 'a'
+		a[1] = 'b'
+		a[2] = 'c'
+		a[3] = 'd'
+
+		a.each{ println it }
+		for(it in a)
+		{
+			println it
+		}
+
+		//定义一个空集合
+		def m=[:]
+		//设置集合的内容，其中name，age为key
+		m.name="Lucy"
+		m.age=16
+		m.height=165
+		//这种方式也可以向map中添加元素
+		m.put("sex","女")
+		//取得集合的内容（单个）
+		println m.get("name")
+		m.each { it ->
+			println it.key+","+it.value
+		}
+		//删除集合元素
+		m.remove("height")
+		println m.get("sex")
+		println m.get("height")
+
+		println "=================数组的使用[看起来和集合差不多]================="
+		//数组的使用
+		def str=["a", "b", "c"]
+		println str[0]
+		for(item in str){
+			println item
+		}
+		def str2=["8", "5", "2", 7] as Integer[]
+		println str2.sum()
+		println str2.sort().reverse()
+
+		// list2string string2list
+		List list1 = ['a', 'b', 'c', 'd']
+		def strs1 = list1 as String[]
+		println strs1[0]
+
+		def strs2 = ['a', 'b', 'c', 'd'] as String[]
+		List list2 = strs2.toList()
+		println list2.get(0)
+
+		def strs3 = ['a', 'b', 'c', 'd'] as String[]
+		List list3 = strs3 as List
+		println list3.get(0)
+
 		expect:
 		println ("何らかの期待値")
 
